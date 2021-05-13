@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Johannes Spicker</title>
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />-->
+    <!--    <link rel="stylesheet" href="assets/css/main.css" />-->
+    <!--    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+
+    <style>
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+
+        .column img {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .column img:hover {
+            opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The expanding image container (positioning is needed to position the close button and the text) */
+        .container {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body style="background-color: #264653 ;">
+
+<div id="page-wrapper">
+
+    <!-- 
+    <header id="header" class="alt">
+        <h1><a href="index.html">Solid State</a></h1>
+    </header>
+    Header -->
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <div class="logo"><span class="icon fa-gem"></span></div>
+            <h2>Hey, I'm Johannes</h2>
+            <p>Unity developer based in Berlin, Germany</p>
+        </div>
+    </section>
+
+    <section id="content-wrapper">
+
+        <section id="content-one">
+            <div class="inner-one">
+
+                <h2 class="major">Magna arcu feugiat</h2>
+                <p>blublublublublublublblublublublublublublublublublb</p>
+
+                <h1 id=someHeader onmouseover="someMouseOver()" onmouseout="someMouseOut()">please mouse over me</h1>
+
+                <h3 id=someImage onmouseover="image1MouseOver()" onmouseout="image1MouseOut()">hi im an image uwu </h3>
+
+
+                <h1 id=someOtherHeader>im a cute header that should can be hidden</h1>
+
+
+                <div class="row">
+                    <div class="column">
+                        <img id=someImage2 src="images/pic02.jpg" class="imageClass1"
+                             onmousedown="selectImage('someImage2', 0)">
+                    </div>
+                    <div class="column">
+
+                        <img id=someImage3 src="images/pic02.jpg" class="imageClass1"
+                             onmousedown="selectImage('someImage3', 0)">
+                    </div>
+                    <div class="column">
+
+                        <image id=someDetails2 src="images/pic02.jpg" class="detailClass1">im some details</image>
+                    </div>
+                </div>
+
+                <h3 id=someDetails3 class="detailClass1">im some 3 details</h3>
+
+
+                <details>
+                    <summary>System Requirements</summary>
+                    <p>Requires a computer running an operating system. The computer
+                        must have some memory and ideally some kind of long-term storage.
+                        An input device as well as some form of output device is
+                        recommended.</p>
+                </details>
+
+                <script>
+                    var someVariable = true;
+                    var someOtherVariable = "a name";
+
+                    function someMouseOver() {
+                        document.getElementById("someHeader").style.color = "red";
+                    }
+
+                    function someMouseOut() {
+                        document.getElementById("someHeader").style.color = "black";
+                    }
+
+                    function image1MouseOver() {
+                        var x = document.getElementById("someOtherHeader");
+                        x.style.display = "block";
+                    }
+
+                    function image1MouseOut() {
+                        var x = document.getElementById("someOtherHeader");
+                        x.style.display = "none";
+                    }
+
+                    //id: unique
+                    //class: each image in the same line has the same class
+                    //class: each popout in the same line has the same class
+
+                    var selectedImageID = null;
+
+                    function getDetails(classId) {
+
+                    }
+
+                    //click image => deselect old popout, select new popout || or just deselect if selected
+                    function selectImage(imageId, collectionIndex) {
+
+                        if (selectedImageID != null && selectedImageID[collectionIndex] != null)
+                            document.getElementById(selectedImageID[collectionIndex]).style.display = "none";
+
+                        if (selectedImageID[collectionIndex] === imageId) {
+                            selectedImageID[collectionIndex] = null;
+                            return;
+                        }
+
+                        selectedImageID[collectionIndex] = imageId;
+                        document.getElementById(imageId).style.display = "block";
+
+                        //image should look selected
+                        //show details
+                    }
+
+                    function openTabContent(evt, cityName) {
+                        var i, tabcontent, tablinks;
+
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+
+                    //enter image => show popout
+                    //exit image => hide popout if not selected, maybe show selected
+
+                    //plan:
+                    //  can hover over images and show different details.
+                    //  cann also toggle the details, so they stay when not hovering anything else
+
+                    //                    <image id="hoverableImage1" onmouseover="toggleSomeDivs(1)" onmou
+                    /*
+                    function showOneDivHideOther(me) {
+                        var blub = document.getElementsByClassName()
+
+                        for (const blubKey in document.getElementsByClassName()) {
+                            if()
+                        }
+                    }
+                    
+                    function hideMe(me){
+                        document.getElementById(me).style.display = "none";
+                    }     
+                    */
+
+                    //cool hover tabs
+                    function openCity(evt, cityName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                </script>
+
+            </div>
+            
+            
+            <div>
+                
+                
+                
+            </div>
+        </section>
+
+    </section>
+
+</div>
+</body>
+</html>
