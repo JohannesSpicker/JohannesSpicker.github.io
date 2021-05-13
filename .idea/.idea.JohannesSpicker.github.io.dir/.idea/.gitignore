@@ -1,0 +1,11 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/contentModel.xml
+/.idea.JohannesSpicker.github.io.iml
+# Datasource local storage ignored files
+/../../../../../../:\GitRepos\JohannesSpicker.github.io\.idea\.idea.JohannesSpicker.github.io.dir\.idea/dataSources/
+/dataSources.local.xml
