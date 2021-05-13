@@ -1,4 +1,9 @@
-﻿.column3 {
+﻿.column2 {
+    flex: 50.00%;
+    padding: 5px;
+}
+
+.column3 {
     flex: 33.33%;
     padding: 5px;
 }
@@ -43,6 +48,36 @@
 
 /* Style the tab content */
 .tabContent {
+    float: none;
+    padding: 0px 12px;
+    /*border: 10px solid #ccc;*/
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+}
+
+.tabContentGroup1 {
+    float: none;
+    padding: 0px 12px;
+    /*border: 10px solid #ccc;*/
+    width: 70%;
+    border-left: none;
+    height: 100%;
+    display: none;
+}
+
+.tabContentGroup2 {
+    float: none;
+    padding: 0px 12px;
+    /*border: 10px solid #ccc;*/
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+}
+
+.tabContentGroup3 {
     float: none;
     padding: 0px 12px;
     /*border: 10px solid #ccc;*/
