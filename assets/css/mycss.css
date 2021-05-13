@@ -46,7 +46,7 @@
     background-color: #ccc;
 }
 
-/* Style the tab content */
+/* Style the tab content */ 
 .tabContent {
     float: none;
     padding: 0px 12px;
@@ -61,7 +61,7 @@
     float: none;
     padding: 0px 12px;
     /*border: 10px solid #ccc;*/
-    width: 70%;
+    width: 100%;
     border-left: none;
     height: 100%;
     display: none;
