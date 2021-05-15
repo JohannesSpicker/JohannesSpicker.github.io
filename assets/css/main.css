@@ -2425,6 +2425,11 @@ input[type="radio"] + label:before {
     display: block;
 }
 
+.image.round {
+    border-radius: 50%;
+    max-width: 20%;
+}
+
 .image.left, .image.right {
     max-width: 40%;
 }
